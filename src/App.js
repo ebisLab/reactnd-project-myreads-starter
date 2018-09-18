@@ -38,16 +38,24 @@ class BooksApp extends React.Component {
             </div>
           </div>
         ) : (
+
+          // START BOOK PAGE
           <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
+
+            { /* START OF BOOKCASE */ }
             <div className="list-books-content">
               <div>
+
+              { /* START SINGLE SHELF CURRENTLY READING */ }
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+
+                    {/* START BOOK */}
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -66,6 +74,8 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Harper Lee</div>
                         </div>
                       </li>
+                      { /* END BOOK */ }
+
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -80,13 +90,15 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Ender's Game</div>
+                          <div className="book-title">Ender''s Game</div>
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
                     </ol>
                   </div>
                 </div>
+                { /* END OF SINGLE SHELF CURRENTLY READING */ }
+                { /* START SINGLE SHELF WANT TO READ */ }
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
@@ -123,13 +135,15 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Harry Potter and the Sorcerer's Stone</div>
+                          <div className="book-title">Harry Potter and the Sorcerer''s Stone</div>
                           <div className="book-authors">J.K. Rowling</div>
                         </div>
                       </li>
                     </ol>
                   </div>
                 </div>
+                { /* END SINGLE SHELF WANT TO READ */ }
+                { /* START OF SINGLE SHELF READ */ }
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
@@ -166,7 +180,7 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Oh, the Places You'll Go!</div>
+                          <div className="book-title">Oh, the Places You''ll Go!</div>
                           <div className="book-authors">Seuss</div>
                         </div>
                       </li>
@@ -191,11 +205,17 @@ class BooksApp extends React.Component {
                     </ol>
                   </div>
                 </div>
+                { /* END OF SINGLE SHELF READ */ }
               </div>
             </div>
+            { /* END OF BOOKCASE */ }
+
+            { /* START SEARCH */ }
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
+            { /* END SEARCH */ }
+
           </div>
         )}
       </div>
