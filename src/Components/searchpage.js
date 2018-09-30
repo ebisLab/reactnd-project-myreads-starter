@@ -2,6 +2,15 @@ import React from 'react'
 import Book from './books'
 
 class SearchPage extends React.Component {
+  state = {
+    query: '',
+  }
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    })
+  }
+
   render() {
     console.log(this.props.books)
     return(
@@ -17,12 +26,17 @@ class SearchPage extends React.Component {
               However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
               you don't find a specific author or title. Every search is limited by search terms.
             */}
-            <input type="text" placeholder="Search by title or author"/>
+            <input type="text" placeholder="Search by title or author"
+            ref={input => this.search = input}
+            onChange={this.handleInputChange}
+            />
+
 
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <ol className="books-grid">
+          {this.state.query}</ol>
         </div>
       </div>
     )
