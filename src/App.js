@@ -19,7 +19,8 @@ class BooksApp extends React.Component {
 
     changeShelf = (book, shelf) => {
       BooksAPI.update(book, shelf);
-{/*call getAll() so you don't have to refresh the page */}
+/*call getAll() again so you don't have to refresh the page */
+/*TODO: rewrite in another method, then call the method*/
       BooksAPI.getAll().then((books) => {
         this.setState({ books: books })
       })
@@ -31,6 +32,7 @@ class BooksApp extends React.Component {
       <HomePage
         books={this.state.books}
         changeShelf={this.changeShelf}
+        /*to make value match current shelf*/
         />
       {/*  {this.state.showSearchPage ? (
         <SearchPage/>
