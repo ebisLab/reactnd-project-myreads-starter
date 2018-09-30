@@ -1,8 +1,8 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI' //* = all
 import './App.css'
-//import SearchPage from './Components/searchpage'
-import HomePage from './Components/homepage'
+import SearchPage from './Components/searchpage'
+//import HomePage from './Components/homepage'
 
 
 class BooksApp extends React.Component {
@@ -29,11 +29,13 @@ class BooksApp extends React.Component {
       console.log(this.state.books)
     return (
       <div className="app">
+      {/*
       <HomePage
         books={this.state.books}
         changeShelf={this.changeShelf}
-        /*to make value match current shelf*/
-        />
+      //to make value match current shelf
+        />*/
+      <SearchPage/>}
       {/*  {this.state.showSearchPage ? (
         <SearchPage/>
         ) : (

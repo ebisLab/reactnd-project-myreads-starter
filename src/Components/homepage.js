@@ -6,7 +6,7 @@ import Books from './books'
 
 class HomePage extends React.Component {
 render(){
-  console.log(this.props.books)
+  //console.log(this.props.books)
   return(
 
     // START BOOK PAGE
