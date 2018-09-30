@@ -29,7 +29,14 @@ render(){
                 .filter(book => book.shelf === 'currentlyReading')
                 .map(book => (
                   <li key={book.id}>
-                  <Books book = {book}/> {/*prop of book with the value of book*/}
+                  <Books book = {book}/>
+                  {/*
+                  prop of book with the value of book
+                  filter
+                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+                  map
+                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+                  */}
                   </li>
                 ))
               }
