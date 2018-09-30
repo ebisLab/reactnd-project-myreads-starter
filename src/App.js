@@ -19,7 +19,10 @@ class BooksApp extends React.Component {
 
     changeShelf = (book, shelf) => {
       BooksAPI.update(book, shelf);
-
+{/*call getAll() so you don't have to refresh the page */}
+      BooksAPI.getAll().then((books) => {
+        this.setState({ books: books })
+      })
   }
   render() {
       console.log(this.state.books)

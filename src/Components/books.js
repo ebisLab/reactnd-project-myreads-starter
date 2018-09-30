@@ -9,7 +9,7 @@ class Books extends React.Component {
         <div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}")` }}></div>
           <div className="book-shelf-changer">
-          {/*pass shelf value to book*/}
+          {/*pass shelf value to book 1:32*/}
             <select
               onChange={(event) => this.props.changeShelf(
                 this.props.book, event.target.value
