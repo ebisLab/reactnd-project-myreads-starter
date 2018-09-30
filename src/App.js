@@ -16,11 +16,19 @@ class BooksApp extends React.Component {
       this.setState({ books: books })
     })
   }
+
+    changeShelf = (book, shelf) => {
+      BooksAPI.update(book, shelf);
+
+  }
   render() {
       console.log(this.state.books)
     return (
       <div className="app">
-      <HomePage books={this.state.books}/>
+      <HomePage
+        books={this.state.books}
+        changeShelf={this.changeShelf}
+        />
       {/*  {this.state.showSearchPage ? (
         <SearchPage/>
         ) : (

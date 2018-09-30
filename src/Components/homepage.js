@@ -29,7 +29,9 @@ render(){
                 .filter(book => book.shelf === 'currentlyReading')
                 .map(book => (
                   <li key={book.id}>
-                  <Books book = {book}/>
+                  <Books book = {book}
+                    changeShelf={this.props.changeShelf}
+                    />
                   {/*
                   prop of book with the value of book
                   filter
@@ -54,7 +56,9 @@ render(){
                   .filter(book => book.shelf === 'wantToRead')
                   .map(book => (
                     <li key={book.id}>
-                    <Books book = {book}/>
+                    <Books book = {book}
+                    changeShelf={this.props.changeShelf}
+                    />
                     </li>
                   ))
                 }
@@ -73,7 +77,9 @@ render(){
                 .filter(book => book.shelf === 'read')
                 .map(book => (
                   <li key={book.id}>
-                  <Books book = {book}/>
+                  <Books book = {book}
+                  changeShelf={this.props.changeShelf}
+                  />
                   </li>
                 ))
               }
