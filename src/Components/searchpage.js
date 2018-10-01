@@ -1,15 +1,29 @@
 import React from 'react'
 import Book from './books'
+import * as BooksAPI from '../BooksAPI' //* = all
+
 
 class SearchPage extends React.Component {
   state = {
     query: '',
+    results: []
   }
-  handleInputChange = () => {
+/*from contacts project */
+  updateQuery = (query) => {
+    this.setState({
+      query: query
+    })
+  }
+  getSearchedBooks = (query) => {
+    BooksAPI.search(query).then((results) => {
+      this.setState({ results: results })
+    })
+  }
+  /*handleInputChange = () => {
     this.setState({
       query: this.search.value
     })
-  }
+  }*/
 
   render() {
     console.log(this.props.books)
@@ -27,16 +41,31 @@ class SearchPage extends React.Component {
               you don't find a specific author or title. Every search is limited by search terms.
             */}
             <input type="text" placeholder="Search by title or author"
-            ref={input => this.search = input}
-            onChange={this.handleInputChange}
+            value={this.state.query}
+
+
+            onChange={(event) =>
+            this.updateQuery(event.target.value)}
+
+            /*ref={input => this.search = input}
+            onChange={this.handleInputChange}*/
             />
-
-
           </div>
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-          {this.state.query}</ol>
+          {
+            this.state.results.map(results =>(
+              <li key ={ results.id }>
+              <Book
+              book={ results }
+                />
+              </li>
+            ))
+          }
+
+          {/*this.state.query*/}</ol>
+          {/*npm install --save escape-string-regexp*/}
         </div>
       </div>
     )
