@@ -18,10 +18,15 @@ class SearchPage extends React.Component {
   updateResults = (query) => {
     if (query) {
       BooksAPI.search(query).then((results) => {
+        if (results.error){
+          this.setState({ results: [] });
+        }/*attributed to youtube*/
+        else {
         this.setState({ results: results })
+      }
     })
   } else {
-    this.setState({ results: [] }) /*empty array if query doesn't match*/
+    this.setState({ results: [] }); /*empty array if query doesn't match*/
   }
   }
   /*handleInputChange = () => {
