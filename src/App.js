@@ -34,16 +34,10 @@ class BooksApp extends React.Component {
         books={this.state.books}
         changeShelf={this.changeShelf}
       //to make value match current shelf
-        />
-      /*<SearchPage
+        />}
+      <SearchPage
       changeShelf={this.changeShelf}
-      /> */ }
-      {/*  {this.state.showSearchPage ? (
-        <SearchPage/>
-        ) : (
-
-        <HomePage/>
-      )}*/}
+      />
       </div>
     )
   }
