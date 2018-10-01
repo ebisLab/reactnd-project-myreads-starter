@@ -1,5 +1,5 @@
 import React from 'react'
-import Book from './books'
+import Books from './books'
 import * as BooksAPI from '../BooksAPI' //* = all
 
 
@@ -13,11 +13,15 @@ class SearchPage extends React.Component {
     this.setState({
       query: query
     })
+    this.updateResults(query);
   }
-  getSearchedBooks = (query) => {
-    BooksAPI.search(query).then((results) => {
-      this.setState({ results: results })
+  updateResults = (query) => {
+    if (query) {
+      BooksAPI.search(query).then((results) => {
+        this.setState({ results: results })
     })
+
+    }
   }
   /*handleInputChange = () => {
     this.setState({
@@ -26,7 +30,8 @@ class SearchPage extends React.Component {
   }*/
 
   render() {
-    console.log(this.props.books)
+
+
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -43,7 +48,6 @@ class SearchPage extends React.Component {
             <input type="text" placeholder="Search by title or author"
             value={this.state.query}
 
-
             onChange={(event) =>
             this.updateQuery(event.target.value)}
 
@@ -57,7 +61,7 @@ class SearchPage extends React.Component {
           {
             this.state.results.map(results =>(
               <li key ={ results.id }>
-              <Book
+              <Books
               book={ results }
                 />
               </li>
