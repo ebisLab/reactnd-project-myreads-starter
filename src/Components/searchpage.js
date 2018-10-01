@@ -20,8 +20,9 @@ class SearchPage extends React.Component {
       BooksAPI.search(query).then((results) => {
         this.setState({ results: results })
     })
-
-    }
+  } else {
+    this.setState({ results: [] }) /*empty array if query doesn't match*/
+  }
   }
   /*handleInputChange = () => {
     this.setState({
