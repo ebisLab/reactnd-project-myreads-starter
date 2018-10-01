@@ -69,6 +69,7 @@ class SearchPage extends React.Component {
               <li key ={ results.id }>
               <Books
               book={ results }
+              changeShelf={this.props.changeShelf}
                 />
               </li>
             ))
