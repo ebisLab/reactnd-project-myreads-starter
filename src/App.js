@@ -1,9 +1,12 @@
+
+//TODO: Add book cover to My First Life
+//TODO: DELETE console.log messages
 import React from 'react'
 import * as BooksAPI from './BooksAPI' //* = all
 import './App.css'
 import SearchPage from './Components/searchpage'
 import HomePage from './Components/homepage'
-
+import { Route } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -29,15 +32,20 @@ class BooksApp extends React.Component {
       console.log(this.state.books)
     return (
       <div className="app">
-      {
+
+      <Route exact path="/" render={() => (
       <HomePage
         books={this.state.books}
         changeShelf={this.changeShelf}
       //to make value match current shelf
-        />}
-      <SearchPage
-      changeShelf={this.changeShelf}
-      />
+        />
+      )} />
+      <Route path="/searchpage" render={() => (
+        <SearchPage
+        changeShelf={this.changeShelf}
+        />
+      )} />
+
       </div>
     )
   }

@@ -1,8 +1,8 @@
 
-
+//import SearchPage from './searchpage'
 import React from 'react'
 import Books from './books'
-
+import { Link } from 'react-router-dom'
 
 class HomePage extends React.Component {
 render(){
@@ -96,7 +96,9 @@ render(){
 
       { /* START SEARCH */ }
       <div className="open-search">
-        <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+        <Link
+        to="/searchpage">
+        Add a book</Link>
       </div>
       { /* END SEARCH */ }
 
