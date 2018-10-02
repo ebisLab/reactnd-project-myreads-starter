@@ -12,7 +12,6 @@ class BooksApp extends React.Component {
   state = {
     books: []
   }
-
   //called by React when the component is created 1:03:37 to fetch books
   componentDidMount(){
     BooksAPI.getAll().then((books) => {
