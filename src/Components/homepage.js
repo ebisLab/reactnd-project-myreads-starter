@@ -3,6 +3,7 @@
 import React from 'react'
 import Books from './books'
 import { Link } from 'react-router-dom'
+import Title from './title'
 
 class HomePage extends React.Component {
 render(){
@@ -11,9 +12,7 @@ render(){
 
     // START BOOK PAGE
     <div className="list-books">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
+    <Title/>
 
       { /* START OF BOOKCASE */ }
       <div className="list-books-content">

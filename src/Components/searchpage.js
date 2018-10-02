@@ -1,8 +1,8 @@
 import React from 'react'
 import Books from './books'
-import * as BooksAPI from '../BooksAPI' //* = all
+import * as BooksAPI from '../BooksAPI'
 import { Link } from 'react-router-dom'
-//import { Route } from 'react-router-dom'
+
 
 
 class SearchPage extends React.Component {
@@ -32,11 +32,7 @@ class SearchPage extends React.Component {
     this.setState({ results: [] }); /*empty array if query doesn't match*/
   }
   }
-  /*handleInputChange = () => {
-    this.setState({
-      query: this.search.value
-    })
-  }*/
+
   render() {
     return(
       <div className="search-books">
