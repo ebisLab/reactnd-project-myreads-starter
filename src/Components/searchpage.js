@@ -77,6 +77,8 @@ class SearchPage extends React.Component {
 
               this.props.books.map(book => (
                 book.id === results.id ?
+                shelf = book.shelf : ""
+
               ))
 
               return (
