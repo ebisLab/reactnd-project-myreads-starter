@@ -32,6 +32,7 @@ render(){
                   <Books book = {book}
                     changeShelf={this.props.changeShelf}
                     shelf='currentlyReading'
+
                     />
                   {/*
                   prop of book with the value of book
