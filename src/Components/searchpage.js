@@ -25,7 +25,7 @@ class SearchPage extends React.Component {
         }/*attributed to youtube*/
         else {
         this.setState({ results: results })
-        
+
       }
     })
   } else {
@@ -71,14 +71,26 @@ class SearchPage extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid">
           {
-            this.state.results.map(results =>(
+            this.state.results.map(results => {
+
+              let shelf ="none";
+
+              this.props.books.map(book => (
+                book.id === results.id ?
+              ))
+
+              return (
               <li key ={ results.id }>
               <Books
               book={ results }
               changeShelf={this.props.changeShelf}
+              currentShelf={shelf}
+
+
+
                 />
-              </li>
-            ))
+              </li>);
+            })
           }
 
           {/*this.state.query*/}</ol>

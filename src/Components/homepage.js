@@ -31,7 +31,7 @@ render(){
                   <li key={book.id}>
                   <Books book = {book}
                     changeShelf={this.props.changeShelf}
-                    shelf='currentlyReading'
+                    currentShelf='currentlyReading'
 
                     />
                   {/*
@@ -60,7 +60,7 @@ render(){
                     <li key={book.id}>
                     <Books book = {book}
                     changeShelf={this.props.changeShelf}
-                    shelf='wantToRead'
+                    currentShelf='wantToRead'
                     />
                     </li>
                   ))
@@ -82,7 +82,7 @@ render(){
                   <li key={book.id}>
                   <Books book = {book}
                   changeShelf={this.props.changeShelf}
-                  shelf='read'
+                  currentShelf='read'
                   />
                   </li>
                 ))
