@@ -32,7 +32,6 @@ class BooksApp extends React.Component {
       console.log(this.state.books)
     return (
       <div className="app">
-
       <Route exact path="/" render={() => (
       <HomePage
         books={this.state.books}
@@ -44,6 +43,7 @@ class BooksApp extends React.Component {
         <SearchPage
         changeShelf={this.changeShelf}
         books={this.props.books}
+        
         />
       )} />
 

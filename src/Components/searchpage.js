@@ -25,6 +25,7 @@ class SearchPage extends React.Component {
         }/*attributed to youtube*/
         else {
         this.setState({ results: results })
+        
       }
     })
   } else {
@@ -36,10 +37,7 @@ class SearchPage extends React.Component {
       query: this.search.value
     })
   }*/
-
   render() {
-
-
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -47,7 +45,8 @@ class SearchPage extends React.Component {
           to="/"
           className="close-search"
           >
-          Close</Link>
+          Close
+          </Link>
 
           <div className="search-books-input-wrapper">
         {/*
