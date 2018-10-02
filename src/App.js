@@ -18,9 +18,9 @@ class BooksApp extends React.Component {
       this.setState({ books: books })
     })
   }
-
     changeShelf = (book, shelf) => {
       BooksAPI.update(book, shelf);
+
 /*call getAll() again so you don't have to refresh the page */
 /*TODO: rewrite in another method, then call the method*/
       BooksAPI.getAll().then((books) => {
@@ -42,7 +42,6 @@ class BooksApp extends React.Component {
         <SearchPage
         changeShelf={this.changeShelf}
         books={this.state.books}
-
         />
       )} />
 

@@ -1,20 +1,27 @@
-
+/*
+prop of book with the value of book
+filter
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+map
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+*/
 //import SearchPage from './searchpage'
 import React from 'react'
 import Books from './books'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import Title from './title'
+import SearchLink from './search-link'
+
 
 class HomePage extends React.Component {
 render(){
   //console.log(this.props.books)
   return(
-
     // START BOOK PAGE
     <div className="list-books">
     <Title/>
 
-      { /* START OF BOOKCASE */ }
+
       <div className="list-books-content">
         <div>
 
@@ -31,15 +38,8 @@ render(){
                   <Books book = {book}
                     changeShelf={this.props.changeShelf}
                     currentShelf='currentlyReading'
-
                     />
-                  {/*
-                  prop of book with the value of book
-                  filter
-                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-                  map
-                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-                  */}
+
                   </li>
                 ))
               }
@@ -92,16 +92,7 @@ render(){
           { /* END OF SINGLE SHELF READ */ }
         </div>
       </div>
-      { /* END OF BOOKCASE */ }
-
-      { /* START SEARCH */ }
-      <div className="open-search">
-        <Link
-        to="/searchpage">
-        Add a book</Link>
-      </div>
-      { /* END SEARCH */ }
-
+      <SearchLink/>
     </div>
 
   )

@@ -1,5 +1,6 @@
 
 import React from 'react'
+//import BookSelection from './book-selection'
 //import BooksApp from '../App'
 
 class Books extends React.Component {
@@ -18,7 +19,6 @@ class Books extends React.Component {
                 this.props.book, event.target.value
               )}
               value={this.props.currentShelf} /*so value matches current shelf*/
-
             >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
