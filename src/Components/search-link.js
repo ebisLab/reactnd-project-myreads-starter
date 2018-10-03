@@ -13,7 +13,7 @@ return(
     Add a book</Link>
   </div>
 
-)}
+  )}
 }
 
 export default SearchLink

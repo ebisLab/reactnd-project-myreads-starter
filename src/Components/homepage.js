@@ -5,49 +5,51 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 map
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 */
-//import SearchPage from './searchpage'
+
 import React from 'react'
 import Books from './books'
-//import { Link } from 'react-router-dom'
 import Title from './title'
 import SearchLink from './search-link'
-//import Read from './read'
 
 function HomePage (props) {
-  //console.log(this.props.books)
+
   return(
-    // START BOOK PAGE
+    /* START BOOK PAGE */
     <div className="list-books">
     <Title/>
-      <div className="list-books-content">
-        <div>
 
+      <div className="list-books-content">
+
+        <div>
         { /* START SINGLE SHELF CURRENTLY READING */ }
           <div className="bookshelf">
             <h2 className="bookshelf-title">Currently Reading</h2>
             <div className="bookshelf-books">
+
               <ol className="books-grid">
               {
                 props.books
                 .filter(book => book.shelf === 'currentlyReading')
                 .map(book => (
+
                   <li key={book.id}>
                   <Books book = {book}
-                    changeShelf={props.changeShelf}
-                    currentShelf='currentlyReading'
-                    />
-
+                  changeShelf={props.changeShelf}
+                  currentShelf='currentlyReading'/>
                   </li>
                 ))
               }
               </ol>
+
             </div>
           </div>
           { /* END OF SINGLE SHELF CURRENTLY READING */ }
+
           { /* START SINGLE SHELF WANT TO READ */ }
           <div className="bookshelf">
             <h2 className="bookshelf-title">Want to Read</h2>
             <div className="bookshelf-books">
+
               <ol className="books-grid">
                 {
                   props.books
@@ -62,9 +64,11 @@ function HomePage (props) {
                   ))
                 }
               </ol>
+
             </div>
           </div>
           { /* END SINGLE SHELF WANT TO READ */ }
+
           { /* START OF SINGLE SHELF READ */ }
           <div className="bookshelf">
             <h2 className="bookshelf-title">Read</h2>
@@ -87,6 +91,7 @@ function HomePage (props) {
             </div>
           </div>
           { /* END OF SINGLE SHELF READ */ }
+
         </div>
       </div>
       <SearchLink/>

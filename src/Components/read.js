@@ -1,13 +1,12 @@
 
 import React from 'react'
 import Books from './books'
-//import { Link } from 'react-router-dom'
 import Title from './title'
 import SearchLink from './search-link'
 
 
-class Read extends React.Component {
-  render() {
+function Read (props) {
+
 return (
   <div className="list-books-content">
     <div>
@@ -18,12 +17,12 @@ return (
         <div className="bookshelf-books">
           <ol className="books-grid">
           {
-            this.props.books
+            props.books
             .filter(book => book.shelf === 'currentlyReading')
             .map(book => (
               <li key={book.id}>
-              <Books book = {book}
-                changeShelf={this.props.changeShelf}
+                <Books book = {book}
+                changeShelf={props.changeShelf}
                 currentShelf='currentlyReading'
                 />
 
@@ -34,18 +33,19 @@ return (
         </div>
       </div>
       { /* END OF SINGLE SHELF CURRENTLY READING */ }
+
       { /* START SINGLE SHELF WANT TO READ */ }
       <div className="bookshelf">
         <h2 className="bookshelf-title">Want to Read</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
             {
-              this.props.books
+              props.books
               .filter(book => book.shelf === 'wantToRead')
               .map(book => (
                 <li key={book.id}>
                 <Books book = {book}
-                changeShelf={this.props.changeShelf}
+                changeShelf={props.changeShelf}
                 currentShelf='wantToRead'
                 />
                 </li>
@@ -55,6 +55,7 @@ return (
         </div>
       </div>
       { /* END SINGLE SHELF WANT TO READ */ }
+
       { /* START OF SINGLE SHELF READ */ }
       <div className="bookshelf">
         <h2 className="bookshelf-title">Read</h2>
@@ -62,12 +63,12 @@ return (
           <ol className="books-grid">
           {/*filter through books create array*/ }
           {
-            this.props.books
+            props.books
             .filter(book => book.shelf === 'read')
             .map(book => (
               <li key={book.id}>
               <Books book = {book}
-              changeShelf={this.props.changeShelf}
+              changeShelf={props.changeShelf}
               currentShelf='read'
               />
               </li>
@@ -77,9 +78,10 @@ return (
         </div>
       </div>
       { /* END OF SINGLE SHELF READ */ }
+
     </div>
   </div>
 )
 
-}}
+}
 //export default Read

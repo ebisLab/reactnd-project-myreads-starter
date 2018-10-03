@@ -1,7 +1,5 @@
 
 import React from 'react'
-//import BookSelection from './book-selection'
-//import BooksApp from '../App'
 
 class Books extends React.Component {
   render() {
@@ -11,9 +9,9 @@ class Books extends React.Component {
     return (
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${bookImage}")` /*`url("${this.props.book.imageLinks.thumbnail}")`*/ }}></div>
+          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${bookImage}")`}}></div>
           <div className="book-shelf-changer">
-          {/*pass shelf value to book 1:32*/}
+          {/* pass shelf value to book */}
             <select
               onChange={(event) => this.props.changeShelf(
                 this.props.book, event.target.value

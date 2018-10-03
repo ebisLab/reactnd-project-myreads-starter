@@ -3,12 +3,12 @@ import React from 'react'
 class Title extends React.Component {
 render () {
 
-  return(
+  return (
     <div className="list-books-title">
-    <h1>MyReads</h1>
-  </div>
-)
-}
+      <h1>MyReads</h1>
+    </div>
+  )
+    }
 }
 
 export default Title

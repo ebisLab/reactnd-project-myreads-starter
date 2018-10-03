@@ -14,9 +14,8 @@ class BookSelection extends React.Component {
       onChange={(event) => this.props.changeShelf(
         this.props.book, event.target.value
       )}
-      value={this.props.currentShelf} /*so value matches current shelf*/
+      value={this.props.currentShelf}> /*so value matches current shelf*/
 
-    >
       <option value="move" disabled>Move to...</option>
       <option value="currentlyReading">Currently Reading</option>
       <option value="wantToRead">Want to Read</option>

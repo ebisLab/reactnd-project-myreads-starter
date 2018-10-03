@@ -81,11 +81,7 @@ class SearchPage extends React.Component {
               <Books
               book={ results }
               changeShelf={this.props.changeShelf}
-              currentShelf={shelf}
-
-
-
-                />
+              currentShelf={shelf}/>
               </li>);
             })
           }
