@@ -4,6 +4,9 @@
  */
 
 //TODO: Create Shelf Component
+//TODO: Have to hit refresh button for selected books in search to show up in home PAGE
+//TODO: After seeing in home, selection is correct in searchpage
+//TODO: not seeing selection immediately appear in search when selecting
 
 /*
 *References:

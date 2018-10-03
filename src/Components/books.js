@@ -24,7 +24,7 @@ class Books extends React.Component {
           {/* Select Tag creates a dropdown list  */}
           {/* https://reactjs.org/docs/forms.html */}
             <select
-              onChange={(event) => this.props.changeShelf(
+              onChange={(event) => this.props.changeShelf (
                 this.props.book, event.target.value
               )}
 

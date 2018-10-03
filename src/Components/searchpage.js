@@ -40,7 +40,6 @@ class SearchPage extends React.Component {
         /* help from https://www.youtube.com/channel/UCqKeTmQIyIXxSSKfFdfbnIg */
         else {
         this.setState({ results }) /* add to results array if no error */
-
       }
     })
   } else {
@@ -74,7 +73,7 @@ class SearchPage extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid">
           {
-            /* map over results of query, label none to books with no shelf */
+            /* map over results of query, books with no shelf as none */
             this.state.results.map(results => {
               let shelf ="none";
               this.props.books.map(book => (
@@ -87,13 +86,14 @@ class SearchPage extends React.Component {
               ))
 
               return (
-              <li key ={ results.id }>
+              <li key ={results.id }>
               <Books
-              book={ results }
+              book={results}
               /* put book on appropriate shelf */
-              changeShelf={this.props.changeShelf}
               /* give book its proper shelf label */
               currentShelf={shelf}
+              changeShelf={this.props.changeShelf}
+              //shelf={this.props.changeShelf}
               />
               </li>);
             })
