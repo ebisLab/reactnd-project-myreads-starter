@@ -1,6 +1,8 @@
 
+/**
 //TODO: Add book cover to My First Life
 //TODO: DELETE console.log messages
+*/
 import React from 'react'
 import * as BooksAPI from './BooksAPI' //* = all
 import './App.css'
@@ -19,16 +21,24 @@ class BooksApp extends React.Component {
     })
   }
     changeShelf = (book, shelf) => {
+      book.shelf = shelf
       BooksAPI.update(book, shelf);
-
-/*TODO: rewrite in another method, then call the method*/
       BooksAPI.getAll().then((books) => {
         this.setState({ books })
       })
     }
+    /*
+    changeShelf = (book, shelf) => {
+      book.shelf = shelf
+      BooksAPI.update(book, shelf).then(() => {
+        this.setState(state => ({book: state.books
+        .filter(book => book.id !== book )
+      .concat(book)}))
+      })
+    }*/
 
   render() {
-      console.log(this.state.books)
+      //console.log(this.state.books)
     return (
       <div className="app">
       <Route exact path="/" render={() => (

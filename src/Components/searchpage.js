@@ -1,18 +1,33 @@
+
+/**
+ * Search Page Component (JavaScript)
+ */
+
+ /**
+  *NOTE: escaping characters
+  *npm install --save escape-string-regexp
+ https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+ **/
+
 import React from 'react'
 import Books from './books'
 import * as BooksAPI from '../BooksAPI'
-import { Link } from 'react-router-dom'
+import HomeLink from './home-link'
 
+/**
+/* start with empty query (search bar) and
+/* array that results will push into
+**/
 
 class SearchPage extends React.Component {
   state = {
     query: '',
     results: []
   }
-/*from contacts project */
+/* From Udactiy Contacts Project */
   updateQuery = (query) => {
     this.setState({
-      query: query
+      query
     })
     this.updateResults(query);
   }
@@ -20,15 +35,16 @@ class SearchPage extends React.Component {
     if (query) {
       BooksAPI.search(query).then((results) => {
         if (results.error){
-          this.setState({ results: [] });
-        }/*attributed to youtube*/
+          this.setState({ results: [] }); /* empty array if query error */
+        }
+        /* help from https://www.youtube.com/channel/UCqKeTmQIyIXxSSKfFdfbnIg */
         else {
-        this.setState({ results: results })
+        this.setState({ results }) /* add to results array if no error */
 
       }
     })
   } else {
-    this.setState({ results: [] }); /*empty array if query doesn't match*/
+    this.setState({ results: [] }); /* if none of the two above, empty array (if query doesn't match) */
   }
   }
 
@@ -36,13 +52,8 @@ class SearchPage extends React.Component {
     return(
       <div className="search-books">
         <div className="search-books-bar">
-          <Link
-          to="/"
-          className="close-search"
-          >
-          Close
-          </Link>
-
+          {/* Component Link to Home Page */}
+          <HomeLink/>
           <div className="search-books-input-wrapper">
         {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.
@@ -54,23 +65,22 @@ class SearchPage extends React.Component {
             */}
             <input type="text" placeholder="Search by title or author"
             value={this.state.query}
-
+            /* get values of input into search bar */
             onChange={(event) =>
             this.updateQuery(event.target.value)}
-
-            /*ref={input => this.search = input}
-            onChange={this.handleInputChange}*/
             />
           </div>
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
           {
+            /* map over results of query, label none to books with no shelf */
             this.state.results.map(results => {
-
               let shelf ="none";
-
               this.props.books.map(book => (
+                /* if book array id is equal to search results book id, then label
+                book with proper shelf, if not, do nothing and book will be labed as none
+                 help from https://www.youtube.com/channel/UCqKeTmQIyIXxSSKfFdfbnIg */
                 book.id === results.id ?
                 shelf = book.shelf : ""
 
@@ -80,14 +90,15 @@ class SearchPage extends React.Component {
               <li key ={ results.id }>
               <Books
               book={ results }
+              /* put book on appropriate shelf */
               changeShelf={this.props.changeShelf}
-              currentShelf={shelf}/>
+              /* give book its proper shelf label */
+              currentShelf={shelf}
+              />
               </li>);
             })
           }
-
-          {/*this.state.query*/}</ol>
-          {/*npm install --save escape-string-regexp*/}
+          </ol>
         </div>
       </div>
     )

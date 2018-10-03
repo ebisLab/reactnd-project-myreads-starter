@@ -1,22 +1,35 @@
 
+/**
+ * Books Component (JavaScript)
+ */
+
 import React from 'react'
 
 class Books extends React.Component {
   render() {
+    /* If link to bookImage exists, get bookImage, if link does not exist, return no image.
+    Must return empty string ""in order to prevent errors
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+    */
     let bookImage = this.props.book.imageLinks ?
     this.props.book.imageLinks.thumbnail :
     "";
+
     return (
       <div className="book">
         <div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${bookImage}")`}}></div>
           <div className="book-shelf-changer">
           {/* pass shelf value to book */}
+          {/* Select Tag creates a dropdown list  */}
+          {/* https://reactjs.org/docs/forms.html */}
             <select
               onChange={(event) => this.props.changeShelf(
                 this.props.book, event.target.value
               )}
-              value={this.props.currentShelf} /*so value matches current shelf*/
+
+              /* allows value to match current shelf */
+              value={this.props.currentShelf}
             >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>

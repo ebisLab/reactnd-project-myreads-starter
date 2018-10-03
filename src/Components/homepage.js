@@ -1,5 +1,12 @@
+
+/**
+ * Home Page Component
+ */
+
+//TODO: Create Shelf Component
+
 /*
-prop of book with the value of book
+*References:
 filter
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 map
@@ -12,7 +19,6 @@ import Title from './title'
 import SearchLink from './search-link'
 
 function HomePage (props) {
-
   return(
     /* START BOOK PAGE */
     <div className="list-books">
@@ -27,7 +33,8 @@ function HomePage (props) {
             <div className="bookshelf-books">
 
               <ol className="books-grid">
-              {
+              {/* Filter through books array, create list item in shelf*/}
+                {
                 props.books
                 .filter(book => book.shelf === 'currentlyReading')
                 .map(book => (
@@ -51,6 +58,7 @@ function HomePage (props) {
             <div className="bookshelf-books">
 
               <ol className="books-grid">
+              {/* Filter through books array, create list item in shelf*/}
                 {
                   props.books
                   .filter(book => book.shelf === 'wantToRead')
@@ -75,18 +83,18 @@ function HomePage (props) {
             <div className="bookshelf-books">
               <ol className="books-grid">
               {/*filter through books create array*/ }
-              {
-                props.books
-                .filter(book => book.shelf === 'read')
-                .map(book => (
-                  <li key={book.id}>
-                  <Books book = {book}
-                  changeShelf={props.changeShelf}
-                  currentShelf='read'
-                  />
-                  </li>
-                ))
-              }
+                {
+                  props.books
+                  .filter(book => book.shelf === 'read')
+                  .map(book => (
+                    <li key={book.id}>
+                    <Books book = {book}
+                    changeShelf={props.changeShelf}
+                    currentShelf='read'
+                    />
+                    </li>
+                  ))
+                }
               </ol>
             </div>
           </div>
