@@ -15,16 +15,15 @@ class BooksApp extends React.Component {
   //called by React when the component is created 1:03:37 to fetch books
   componentDidMount(){
     BooksAPI.getAll().then((books) => {
-      this.setState({ books: books })
+      this.setState({ books })
     })
   }
     changeShelf = (book, shelf) => {
       BooksAPI.update(book, shelf);
 
-/*call getAll() again so you don't have to refresh the page */
 /*TODO: rewrite in another method, then call the method*/
       BooksAPI.getAll().then((books) => {
-        this.setState({ books: books })
+        this.setState({ books })
       })
   }
   render() {

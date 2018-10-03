@@ -11,17 +11,14 @@ import Books from './books'
 //import { Link } from 'react-router-dom'
 import Title from './title'
 import SearchLink from './search-link'
+//import Read from './read'
 
-
-class HomePage extends React.Component {
-render(){
+function HomePage (props) {
   //console.log(this.props.books)
   return(
     // START BOOK PAGE
     <div className="list-books">
     <Title/>
-
-
       <div className="list-books-content">
         <div>
 
@@ -31,12 +28,12 @@ render(){
             <div className="bookshelf-books">
               <ol className="books-grid">
               {
-                this.props.books
+                props.books
                 .filter(book => book.shelf === 'currentlyReading')
                 .map(book => (
                   <li key={book.id}>
                   <Books book = {book}
-                    changeShelf={this.props.changeShelf}
+                    changeShelf={props.changeShelf}
                     currentShelf='currentlyReading'
                     />
 
@@ -53,12 +50,12 @@ render(){
             <div className="bookshelf-books">
               <ol className="books-grid">
                 {
-                  this.props.books
+                  props.books
                   .filter(book => book.shelf === 'wantToRead')
                   .map(book => (
                     <li key={book.id}>
                     <Books book = {book}
-                    changeShelf={this.props.changeShelf}
+                    changeShelf={props.changeShelf}
                     currentShelf='wantToRead'
                     />
                     </li>
@@ -75,12 +72,12 @@ render(){
               <ol className="books-grid">
               {/*filter through books create array*/ }
               {
-                this.props.books
+                props.books
                 .filter(book => book.shelf === 'read')
                 .map(book => (
                   <li key={book.id}>
                   <Books book = {book}
-                  changeShelf={this.props.changeShelf}
+                  changeShelf={props.changeShelf}
                   currentShelf='read'
                   />
                   </li>
@@ -96,5 +93,5 @@ render(){
     </div>
 
   )
-}}
+}
 export default HomePage

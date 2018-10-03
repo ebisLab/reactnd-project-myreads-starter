@@ -4,7 +4,6 @@ import * as BooksAPI from '../BooksAPI'
 import { Link } from 'react-router-dom'
 
 
-
 class SearchPage extends React.Component {
   state = {
     query: '',
