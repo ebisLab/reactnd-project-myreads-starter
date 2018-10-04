@@ -17,7 +17,7 @@ https://review.udacity.com/#!/rubrics/918/view
 
 ## Installation
 * Install project dependencies with `npm install`
-* Start development server with `npm start`
+* Launch development server with `npm start`
 
 
 ## References

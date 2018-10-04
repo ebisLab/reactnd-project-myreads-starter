@@ -1,6 +1,6 @@
 
 /**
- * Button that links to Home Page (JavaScript)
+ * home-link.js --> Button that links to Home Page
  */
 
 import React from 'react'

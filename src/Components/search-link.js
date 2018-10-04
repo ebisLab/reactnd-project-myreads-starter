@@ -1,6 +1,6 @@
 
 /**
- * Button that links to Search Page (JavaScript)
+ * search-link.js --> Button that links to Search Page
  */
 
 import React from 'react'

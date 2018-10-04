@@ -13,11 +13,6 @@ import React from 'react'
 import Books from './books'
 import * as BooksAPI from '../BooksAPI'
 import HomeLink from './home-link'
-//import { Link } from 'react-router-dom'
-
-
-//import { Link } from 'react-router-dom'
-
 
 /**
 /* start with empty query (search bar) and
@@ -28,7 +23,7 @@ class SearchPage extends React.Component {
   state = {
     query: '',
     results: [],
-  
+
   }
 /* From Udactiy Contacts Project */
   updateQuery = (query) => {
@@ -41,15 +36,15 @@ class SearchPage extends React.Component {
     if (query) {
       BooksAPI.search(query).then((results) => {
         if (results.error){
-          this.setState({ results: [] }); /* empty array if query error */
+          this.setState({results: []}); /* empty array if query error */
         }
         /* help from https://www.youtube.com/channel/UCqKeTmQIyIXxSSKfFdfbnIg */
         else {
-        this.setState({ results }) /* add to results array if no error */
+        this.setState({results}) /* add to results array if no error */
       }
     })
   } else {
-    this.setState({ results: [] }); /* if none of the two above, empty array (if query doesn't match) */
+    this.setState({results: []}); /* if none of the two above, empty array (if query doesn't match) */
   }
   }
 
@@ -68,6 +63,7 @@ class SearchPage extends React.Component {
               However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
               you don't find a specific author or title. Every search is limited by search terms.
             */}
+
             <input type="text" placeholder="Search by title or author"
             value={this.state.query}
             /* get values of input into search bar */
@@ -81,7 +77,7 @@ class SearchPage extends React.Component {
           {
             /* map over results of query, books with no shelf as none */
             this.state.results.map(results => {
-              let shelf ="none";
+              let shelf="none";
               this.props.books.map(book => (
                 /* if book array id is equal to search results book id, then label
                 book with proper shelf, if not, do nothing and book will be labed as none
@@ -92,7 +88,7 @@ class SearchPage extends React.Component {
               ))
 
               return (
-              <li key ={results.id }>
+              <li key ={results.id}>
               <Books
               book={results}
               /* put book on appropriate shelf */
@@ -111,4 +107,5 @@ class SearchPage extends React.Component {
   }
 
 }
+
 export default SearchPage

@@ -1,6 +1,6 @@
 
 /**
- * Home Page Component
+ * homepage.js --> Home Page Component
  */
 
 //TODO: Create Shelf Component
