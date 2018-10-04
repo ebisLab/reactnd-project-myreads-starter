@@ -51,8 +51,10 @@ class SearchPage extends React.Component {
     return(
       <div className="search-books">
         <div className="search-books-bar">
-          {/* Component Link to Home Page */}
+          /* Component Link to Home Page */
           <HomeLink/>
+
+
           <div className="search-books-input-wrapper">
         {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.

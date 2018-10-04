@@ -16,7 +16,6 @@ render(){
       to="/searchpage">
       Add a book</Link>
     </div>
-
   )}
 }
 
