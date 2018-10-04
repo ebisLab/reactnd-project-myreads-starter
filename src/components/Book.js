@@ -19,7 +19,7 @@ class Book extends React.Component {
                             </div>
                           </div>
                           <div className="book-title">The Hobbit</div>
-                          <div className="book-authors">J.R.R. Tolkien</div>
+                          <div className="book-authors">{this.props.book.authors[0]|| "No Author ..."}</div>
                         </div>
                       </li>
 
