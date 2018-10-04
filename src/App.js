@@ -39,9 +39,7 @@ class BooksApp extends React.Component {
       BooksAPI.getAll()
       .then((books) => {
         this.setState(
-          state => ({books: state.books
-        .filter(book => book.id === book )
-      .concat(book)})
+          state => ({books: state.books})
 
     )
       })
@@ -58,10 +56,11 @@ class BooksApp extends React.Component {
         changeShelf={this.changeShelf}/>
       )}/>
 
-      <Route path="/" render={() => (
+      <Route path="/searchpage" render={() => (
         <SearchPage
         changeShelf={this.changeShelf}
-        books={this.state.books}/>
+        books={this.state.books}
+        currentShelf={this.shelf}/>
       )}/>
 
       </div>
