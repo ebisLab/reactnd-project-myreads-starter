@@ -3,16 +3,11 @@
  * homepage.js --> Home Page Component
  */
 
-//TODO: Create Shelf Component
-//TODO: Have to hit refresh button for selected books in search to show up in home PAGE
-//TODO: After seeing in home, selection is correct in searchpage
-//TODO: not seeing selection immediately appear in search when selecting
-
 /*
 *References:
-filter
+filter() refresher
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-map
+map() refresher
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 */
 

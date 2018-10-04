@@ -3,11 +3,13 @@
  * App.js
  */
 
-
 /**
 //TODO: Add book cover to My First Life
 //TODO: Make page faster
 //TODO: Add new books
+//TODO: Change Search Page to "Search" and Home Page to "Main"
+//      When I tried to do this, even though I thought I updated all of the paths,
+        the app would not link to the search page properly
 */
 
 import React from 'react'
