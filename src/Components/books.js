@@ -24,12 +24,15 @@ class Books extends React.Component {
           {/* Select Tag creates a dropdown list  */}
           {/* https://reactjs.org/docs/forms.html */}
             <select
+              
+              value={this.props.book.shelf}
               onChange={(event) => this.props.changeShelf (
-                this.props.book, event.target.value
+              this.props.book, event.target.value
+
               )}
 
               /* allows value to match current shelf */
-              value={this.props.currentShelf}
+              //value={this.props.currentShelf}
             >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>

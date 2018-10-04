@@ -23,6 +23,7 @@ class BooksApp extends React.Component {
     })
   }
 
+    /*
     changeShelf = (book, shelf) => {
       book.shelf = shelf
       BooksAPI.update(book, shelf)
@@ -31,7 +32,17 @@ class BooksApp extends React.Component {
         this.setState({ books })
 
       })
-    }
+    }*/
+
+    changeShelf = (book, shelf) => {
+      book.shelf = shelf
+      BooksAPI.update(book, shelf).then(() => {
+        this.setState(state => ({books: state.book
+          .filter(b => b.id !== book)
+      .concat(book)}))
+      }
+    )
+};
 
   render() {
       //console.log(this.state.books)
@@ -41,6 +52,7 @@ class BooksApp extends React.Component {
       <Route exact path="/" render={() => (
       <HomePage
         changeShelf={this.changeShelf}
+        currentShelf={this.shelf}
         books={this.state.books}
         />
       )}/>
