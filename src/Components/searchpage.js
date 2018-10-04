@@ -27,7 +27,8 @@ import HomeLink from './home-link'
 class SearchPage extends React.Component {
   state = {
     query: '',
-    results: []
+    results: [],
+  
   }
 /* From Udactiy Contacts Project */
   updateQuery = (query) => {
