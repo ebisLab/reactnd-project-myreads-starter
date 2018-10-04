@@ -13,6 +13,11 @@ import React from 'react'
 import Books from './books'
 import * as BooksAPI from '../BooksAPI'
 import HomeLink from './home-link'
+//import { Link } from 'react-router-dom'
+
+
+//import { Link } from 'react-router-dom'
+
 
 /**
 /* start with empty query (search bar) and
@@ -51,10 +56,8 @@ class SearchPage extends React.Component {
     return(
       <div className="search-books">
         <div className="search-books-bar">
-          /* Component Link to Home Page */
+      {/* Component Link to Home Page */}
           <HomeLink/>
-
-
           <div className="search-books-input-wrapper">
         {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.
