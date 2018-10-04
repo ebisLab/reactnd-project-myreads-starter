@@ -20,12 +20,20 @@ class MainPage extends React.Component {
 		BooksAPI.getAll()
 			.then(resp =>{
 				console.log(resp);
-				this.setState({books: resp});
+				this.setState({ books: resp });
 			});
 	}
 
 
-
+	updateBook = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+    .then(resp => {
+      book.shelf = shelf;
+      this.setState(state =>({
+      	books: state.books.filter(b => b.id === book.id).concat([book])
+      }));
+    });
+  }
 
 	render(){
 		return(

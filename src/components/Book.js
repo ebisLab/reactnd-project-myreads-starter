@@ -17,18 +17,7 @@ class Book extends React.Component {
     console.log(this);
   }
 
-  updateBook(book, shelf){
 
-    BooksAPI.update(this.state.book, shelf)
-    .then(resp => {
-      this.setState(state =>{
-        let copy = state.book;
-        copy.shelf = shelf;
-        this.setstate({book: copy});
-      });
-    });
-
-  }
 
   render(){
     return(
