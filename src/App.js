@@ -16,32 +16,20 @@ class BooksApp extends React.Component {
   }
   //called by React when the component is created 1:03:37 to fetch books
   componentDidMount(){
-    BooksAPI.getAll().then((books) => {
+
+    BooksAPI.getAll()
+    .then((books) => {
       this.setState({ books })
     })
-  }/*
+  }
+
     changeShelf = (book, shelf) => {
       book.shelf = shelf
-      BooksAPI.update(book, shelf);
-
-      BooksAPI.getAll()
-
-      .then((books) => {
-        this.setState(
-
-        { books })
-      })
-    }
-    */
-    changeShelf = (book, shelf) => {
-      book.shelf = shelf
-      BooksAPI.update(book, shelf);
+      BooksAPI.update(book, shelf)
       BooksAPI.getAll()
       .then((books) => {
-        this.setState(
-          state => ({books: state.books})
+        this.setState({ books })
 
-    )
       })
     }
 
@@ -52,15 +40,17 @@ class BooksApp extends React.Component {
 
       <Route exact path="/" render={() => (
       <HomePage
+        changeShelf={this.changeShelf}
         books={this.state.books}
-        changeShelf={this.changeShelf}/>
+        />
       )}/>
 
       <Route path="/searchpage" render={() => (
         <SearchPage
         changeShelf={this.changeShelf}
         books={this.state.books}
-        currentShelf={this.shelf}/>
+        currentShelf={this.shelf}
+        />
       )}/>
 
       </div>
