@@ -1,6 +1,9 @@
+//MAINPAGE.JS
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as BooksAPI from '../../BooksAPI'
+import * as BooksAPI from '../../BooksAPI' //pulling in information from API
+
 
 import Shelf from '../Shelf';
 
@@ -18,16 +21,16 @@ class MainPage extends React.Component {
 
 	componentDidMount(){
 		BooksAPI.getAll()
-			.then(resp =>{
-				console.log(resp);
-				this.setState({ books: resp });
+			.then(response =>{
+				console.log(response);
+				this.setState({ books: response }); //add response to component state
 			});
 	}
 
 
 	updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
-    .then(resp => {
+    .then(response => {
       book.shelf = shelf;
       this.setState(state =>({
       	books: state.books.filter(b => b.id !== book.id).concat([book])

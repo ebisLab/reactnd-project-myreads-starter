@@ -1,12 +1,11 @@
 import React from 'react'
 
 import './App.css'
-
 import { Route } from 'react-router-dom'
 
 
-import MainPage from './components/pages/MainPage';
-import SearchPage from './components/pages/SearchPage';
+import MainPage from './components/pages/MainPage'; //main page
+import SearchPage from './components/pages/SearchPage'; //search page
 
 
 class BooksApp extends React.Component {

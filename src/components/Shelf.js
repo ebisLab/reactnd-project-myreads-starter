@@ -1,3 +1,5 @@
+//SHELF.JS
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -5,7 +7,7 @@ import Book from './Book';
 
 class Shelf extends React.Component {
 componentDidAmount() {
-  console.log(this);
+  console.log(this); //whenever a new shelf component gets mounted and rendered
 }
 
   render(){
