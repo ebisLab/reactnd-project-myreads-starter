@@ -4,10 +4,10 @@ import App from './App';
 import './index.css';
 
 //This will allow to use react router to be used
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 ReactDOM.render(
-	<BrowserRouter>
+	<HashRouter>
 		<App />
 	</BrowserRouter>, 
 	document.getElementById('root')

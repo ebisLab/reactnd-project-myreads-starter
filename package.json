@@ -1,8 +1,5 @@
 
 {
-"main":"index.js"
-},
-{
   "homepage": "https://ebislab.github.io/reactnd-project-myreads-starter",
   "dependencies": {
     "prop-types": "^15.6.1",
