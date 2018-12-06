@@ -9,6 +9,6 @@ import { HashRouter } from 'react-router-dom'
 ReactDOM.render(
 	<HashRouter>
 		<App />
-	</BrowserRouter>, 
+	</HashRouter>, 
 	document.getElementById('root')
 	)
