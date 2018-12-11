@@ -9,8 +9,8 @@
 
 
 ## Description
-This is Project 6 in Udacity's Front End Nano Degree/Grow With Google program. 
-This is the [demo](https://ebislab.github.io/reactnd-project-myreads-starter) 
+This is Project 6 in Udacity's Front End Nano Degree/Grow With Google program. <br>
+This is the [demo](https://ebislab.github.io/reactnd-project-myreads-starter)<br> 
 The app is separated into 3 categories also known as shelves: Currently Reading, Want to Read, and Read.
 
 Users can add and remove books to each category. By clicking the green '+' in the bottom right corner, the user can search for books.
